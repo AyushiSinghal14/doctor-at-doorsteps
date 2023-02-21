@@ -1,0 +1,96 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+
+}
+.home{
+	background: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.3)),url(images1/doctor.jpg)no-repeat;
+	background-size: 100% 100%;
+	width: 100%;
+	padding: 180px 0;
+
+}
+section.doctor img{
+	width: 130px;
+	height: 130px;
+	border-radius: 50%;
+}
+hr {
+	width: 10%;
+	border-width: 4px;
+	background-color: #A52A2A;
+	margin: auto;
+	margin-bottom: 80px;
+}
+
+.color{
+	color: blue;
+
+}
+
+.contact{
+	background:linear-gradient(rgba(246,4,65,0.685) ,rgba(255.5.26)) url(contact.jpg)no-repeat;
+	background-size: 100% 100%;
+
+}
+
+
+
+
+li:hover{
+	background-color: #f5f5f0;
+
+}
+
+.navbar-nav{
+   background-color: rgb(255, 255, 255);
+	font-size: large;
+}
+.navbar-collapse {
+	align-items: flex-end;
+}
+.navbar-brand{
+	font-size: xx-large ;
+
+}
+
+
+.navbar{
+	width:100%
+}
+
+.col-lg-6:hover,.col-lg-3:hover,.col-lg-4:hover{
+
+	transform: translateY(-15px);
+
+}
+.page-footer{
+	background-color: lightgray;
+	font-size: large;
+}
+/*.col-lg-3{*/
+/*	transform: translateY(-15px);*/
+
+/*}*/
+
+.btn-floating:hover{
+	background-color: gray;
+	border-radius: 100%;
+
+}
+
+
+.chat-with-us {
+	background-color : #31B0D5;
+	color: white;
+	padding: 10px 20px;
+	border-radius: 4px;
+	border-color: #46b8da;
+  }
+  
+  #mybutton {
+	position: fixed;
+	bottom: -4px;
+	right: 10px;
+  }

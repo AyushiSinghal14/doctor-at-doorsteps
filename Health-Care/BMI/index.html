@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+     <div>
+        <h2>BMI Calculator</h2>
+        <p class="text">Height</p>
+        <input type="text" id="height">
+        <p class="text">Weight</p>
+        <input type="text" id="weight">
+        <p id="result"></p>
+        <button id="btn" onClick="bmi()">Calculator</button>
+        <p id="info">Please enter height[cm] and weight[kg]</p>
+     </div>
+
+     <script>
+        function bmi(){
+            var h = document.getElementById('height').value;
+            var w = document.getElementById('weight').value;
+            var bmi = w/(h /100 * h / 100);
+            var total=bmi.toFixed(3);
+            if (total<18.5){
+                document.getElementById('result').innerHTML = "Your BMI is "+ total+"<br>"+"You are underweight "
+            }
+            else if (total>=18.5 && total<24.9){
+                document.getElementById('result').innerHTML = "Your BMI is "+ total+"<br>"+"You are healthy ";
+            }
+            else if (total>=24.9 && total<29.9 ){
+                document.getElementById('result').innerHTML = "Your BMI is "+ total+"<br>"+"You are overweight ";
+            }
+            else {
+                document.getElementById('result').innerHTML = "Your BMI is "+ total+"<br>"+"You are obese ";
+            }l̥ō
+    }
+     </script>
+     
+</body>
+</html>

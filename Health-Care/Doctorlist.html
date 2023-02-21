@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- connecting link of navbar -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
+    <style>
+        nav {
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .2);
+        }
+
+        body {
+            font-family: Arial;
+            color: white;
+        
+        }
+
+        /* for filters */
+
+        .split {
+            height: 100%;
+            position: fixed;
+            z-index: 1;
+            /* if top is 0 then it hides navbar */
+            top: 1;
+            overflow-x: hidden;
+            padding-top: 20px;
+        }
+
+        .left {
+            left: 0;
+            width: 20%;
+            padding: 1%;
+
+        }
+
+        .right {
+            right: 0;
+            width: 80%;
+
+        }
+
+        .centered {
+            text-decoration-color: black;
+        }
+
+        label {
+            color: black;
+        }
+
+        h1 {
+            color: black;
+        }
+
+        /* scrollbar */
+
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+            background: #4d4b4b;
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        /* part 2 css */
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+        }
+
+        html {
+            box-sizing: border-box;
+        }
+
+        *,
+        *:before,
+        *:after {
+            box-sizing: inherit;
+        }
+
+        .column {
+            float: left;
+            width: 33.3%;
+            margin-bottom: 16px;
+            padding: 0 8px;
+        }
+
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            margin: 8px;
+        }
+
+        .about-section {
+            padding: 50px;
+            text-align: center;
+            background-color: #474e5d;
+            color: white;
+        }
+
+        .container {
+            padding: 0 16px;
+        }
+
+        .container::after,
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        .title {
+            color: rgb(61, 62, 60);
+            font-size:large;
+        }
+
+        .button {
+            border: none;
+            outline: 0;
+            display: inline-block;
+            padding: 8px;
+            color: white;
+            background-color: #000;
+            text-align: center;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .button:hover {
+            background-color: #555;
+        }
+
+        @media screen and (max-width: 650px) {
+            .column {
+                width: 100%;
+                display: block;
+            }
+        }
+        img{
+          width: 400px;
+          height: 400px;    
+        }
+        
+        p{
+            color: #000;
+        }
+        h2{
+            color: #000;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size:xx-large;
+            font-weight: 700;
+            
+        }
+        
+    </style>
+
+</head>
+
+<body>
+
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+        <a class="navbar-brand font-weight-bold pl-5" href="">Health Care</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active pr-5">
+                    <a class="nav-link font-weight-bold" href="index.html">Home</a>
+                </li>
+                <li class="nav-item pr-5">
+                    <a class="nav-link font-weight-bold" href="./about.html">About</a>
+                </li>
+               
+                <li class="nav-item pr-5">
+                    <a class="nav-link font-weight-bold" href="
+                    https://khuranaharshita-disease-prediction-mdps-public-7hpvgc.streamlit.app/">Disease Prediction</a>
+                    </a>
+                </li>
+                <li class="nav-item pr-5">
+                    <a class="nav-link font-weight-bold" href="exercise.html">Exercise</a>
+                    </a>
+                </li>
+                
+                <li class="nav-item pr-5">
+                    <a class="nav-link font-weight-bold" href="Doctorlist.html">SEARCH FOR DOCTOR
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+
+    </nav>
+
+
+    <div class="split left">
+        <div class="centered">
+            <h1>Filters</h1>
+            &nbsp;
+
+            <form action="/action_page.php">
+                <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                <label for="vehicle1"> Cardiologists</label><br>
+                <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+                <label for="vehicle2"> Dentists</label><br>
+                <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+                <label for="vehicle3"> Gynecologists</label><br>
+                <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+                <label for="vehicle3"> Pediatricians</label><br>
+                <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+                <label for="vehicle3"> Psychiatrists</label><br>
+                <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+                <label for="vehicle3"> Radiologists</label><br>
+                <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+                <label for="vehicle3"> Pulmonologists</label><br>
+                <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+                <label for="vehicle3"> Neurologists</label><br>
+                <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+                <label for="vehicle3"> Oncologists</label><br>
+                <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+                <label for="vehicle3"> Endocrinologists</label><br>
+            </form>
+        </div>
+        &nbsp;
+        <h1>Ranges</h1>
+        <form action="">
+            <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+            <label for="vehicle3"> Rs.0-500</label><br>
+
+            <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+            <label for="vehicle3"> Rs.501-1000</label><br>
+
+            <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+            <label for="vehicle3">Rs.1001-1500</label><br>
+
+            <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+            <label for="vehicle3"> Rs.1501&more</label><br>
+
+
+        </form>
+
+        <h1>Gender</h1>
+        <form action="">
+            <input type="checkbox" id="gender1" name="gender1" value="Boat">
+            <label for="gender1"> Male Doctor</label><br>
+
+            <input type="checkbox" id="gender2" name="gender2" value="Boat">
+            <label for="gender2"> Female Doctor</label><br>
+
+        </form>
+
+
+    </div>
+
+    <div class="split right">
+        <div class="centered">
+            <!-- w3 -->
+            <h2 style="text-align:center" >Our Doctors</h2>
+            <div class="row">
+                <div class="column">
+                    <div class="card">
+                        <img src="images1/anil.jpeg" alt="Jane" style="width:100%">
+                        <div class="container">
+                            <h2>Manik Grewal</h2>
+                            <p class="title">Dentists</p>
+                            <p>Book Appointment Between 10am - 2pm</p>
+                            <p>9154290865, Manik_grewal@gmail.com</p>
+                            <p><button class="button">Contact</button></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="card">
+                        <img src="images1/shivani.jpeg" alt="Mike" style="width:100%">
+                        <div class="container">
+                            <h2>Shivani Tyagi</h2>
+                            <p class="title">Cardiologist</p>
+                            <p>Book Appointment Between 11am - 1pm</p>
+                            <p>974236587542, shivani_tyagi@gmail.com</p>
+                            <p><button class="button">Contact</button></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="card">
+                        <img src="images1/maheshwari.jpeg" alt="John" style="width:100%">
+                        <div class="container">
+                            <h2>Ayushi Maheshwari</h2>
+                            <p class="title">Gynecologists</p>
+                            <p>Book Appointment Between 1pm - 4pm</p>
+                            <p>7895642409, Ayushi97@gmail.com</p>
+                            <p><button class="button">Contact</button></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="column">
+                    <div class="card">
+                        <img src="images1/anil1.jpg" alt="Jane" style="width:100%">
+                        <div class="container">
+                            <h2>Rohit Sirohi</h2>
+                            <p class="title">Dentists</p>
+                            <p>Book Appointment Between 10am - 2pm</p>
+                            <p>9154290865, rohit_sirohi@gmail.com</p>
+                            <p><button class="button">Contact</button></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="card">
+                        <img src="images1/shivani2.jpg" alt="Mike" style="width:100%">
+                        <div class="container">
+                            <h2>Prakshal Jain</h2>
+                            <p class="title">Cardiologist</p>
+                            <p>Book Appointment Between 11am - 1pm</p>
+                            <p>974236587542, prakshal_jain@gmail.com</p>
+                            <p><button class="button">Contact</button></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="card">
+                        <img src="images1/p.avif" alt="John" style="width:100%">
+                        <div class="container">
+                            <h2>Atul Maheshwari</h2>
+                            <p class="title">Gynecologists</p>
+                            <p>Book Appointment Between 1pm - 4pm</p>
+                            <p>7895642409, Atul97@gmail.com</p>
+                            <p><button class="button">Contact</button></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+
+
+            <div class="row">
+                <div class="column">
+                    <div class="card">
+                        <img src="images1/anil.jpeg" alt="Jane" style="width:100%">
+                        <div class="container">
+                            <h2>Manik Grewal</h2>
+                            <p class="title">Dentists</p>
+                            <p>Book Appointment Between 10am - 2pm</p>
+                            <p>9154290865, Manik_grewal@gmail.com</p>
+                            <p><button class="button">Contact</button></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="card">
+                        <img src="images1/shivani.jpeg" alt="Mike" style="width:100%">
+                        <div class="container">
+                            <h2>Shivani Tyagi</h2>
+                            <p class="title">Cardiologist</p>
+                            <p>Book Appointment Between 11am - 1pm</p>
+                            <p>974236587542, shivani_tyagi@gmail.com</p>
+                            <p><button class="button">Contact</button></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="card">
+                        <img src="images1/maheshwari.jpeg" alt="John" style="width:100%">
+                        <div class="container">
+                            <h2>Ayushi Maheshwari</h2>
+                            <p class="title">Gynecologists</p>
+                            <p>Book Appointment Between 1pm - 4pm</p>
+                            <p>7895642409, Ayushi97@gmail.com</p>
+                            <p><button class="button">Contact</button></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="column">
+                    <div class="card">
+                        <img src="images1/anil1.jpg" alt="Jane" style="width:100%">
+                        <div class="container">
+                            <h2>Rohit Sirohi</h2>
+                            <p class="title">Dentists</p>
+                            <p>Book Appointment Between 10am - 2pm</p>
+                            <p>9154290865, rohit_sirohi@gmail.com</p>
+                            <p><button class="button">Contact</button></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="card">
+                        <img src="images1/shivani2.jpg" alt="Mike" style="width:100%">
+                        <div class="container">
+                            <h2>Prakshal Jain</h2>
+                            <p class="title">Cardiologist</p>
+                            <p>Book Appointment Between 11am - 1pm</p>
+                            <p>974236587542, prakshal_jain@gmail.com</p>
+                            <p><button class="button">Contact</button></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="card">
+                        <img src="images1/p.avif" alt="John" style="width:100%">
+                        <div class="container">
+                            <h2>Atul Maheshwari</h2>
+                            <p class="title">Gynecologists</p>
+                            <p>Book Appointment Between 1pm - 4pm</p>
+                            <p>7895642409, Atul97@gmail.com</p>
+                            <p><button class="button">Contact</button></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+ 
+
+        </div>
+    </div>
+
+
+</body>
+
+</html>

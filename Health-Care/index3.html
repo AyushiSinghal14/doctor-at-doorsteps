@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>yoga</title>
+
+    <!-- <link rel="stylesheet" href="jva.js" /> -->
+    <link
+      rel="stylesheet"
+      href="{{url_for('static',filename='css/style.css')}}"
+    />
+    <link rel="stylesheet" href="index.css"/>
+
+    <script>
+      function showPrediction() {
+        let input = document.getElementById("input").value;
+        let prediction = document.getElementById("prediction");
+
+        // Parse the input as an integer
+        let num = parseInt(input);
+
+        // Check if the input is an integer between 1 and 10
+        if (!isNaN(num) && num >= 1 && num <= 15) {
+          prediction.innerHTML =
+            "Young blood can easily do HIIT workout. Prefer doing burpee, mountain climbers, jumping jacks, lunges and run 2 miles a day";
+        } else if (!isNaN(num) && num >= 16 && num <= 50) {
+          prediction.innerHTML =
+            "Recommended exercises are Hatha Yoga, Power Yoga, Pilates and run 5 miles a day.";
+        } else if (!isNaN(num) && num >= 51 && num <= 75) {
+          prediction.innerHTML =
+            "Recommended exercises are Hatha Yoga, Bridge pose, Forward Fold, Surya Kriya and walk 4 miles a day.";
+        } else if (!isNaN(num) && num <= 120) {
+          prediction.innerHTML =
+            "Recommended exercises are Light Yoga such as Sun Salutation, Moon Salutation, Butterfly Pose, Child Pose and walk 2 miles a day.";
+        } else {
+          prediction.innerHTML = "OOPS!! Invalid age.";
+        }
+      }
+    </script>
+  </head>
+  <body>
+    
+  
+    <div class="outer-box">
+      <div class="inner-box">
+        <div>
+          <center>
+            <form action="{{url_for('predict')}}" method="post">
+              <p class="text-size">
+                What is your approx calorie consumption in a day?
+              </p>
+              <input
+                type="number"
+                id="calorie"
+                name="calorie"
+                placeholder="Calorie Consumption"
+                required="required"
+              /><br />
+              <p class="text-size">What is your gender?</p>
+              <label class="options"
+                ><input
+                  type="radio"
+                  name="Sex"
+                  value="1"
+                  required="required"
+                /><b>Male</b></label
+              >
+              <label class="options"
+                ><input
+                  type="radio"
+                  name="Sex"
+                  value="0"
+                  required="required"
+                /><b>Female</b></label
+              ><br />
+              <p class="text-size">What is your age?</p>
+              <input type="text" id="input" onkeyup="showPrediction()" />
+              <p id="prediction"></p>
+            </form>
+          </center>
+        </div>
+      </div>
+    </div>
+
+    
+
+    <!-- <script type=""text/javascript"
+src="{{url_for('static',filename='script/script.js')}}"></script> -->
+  </body>
+</html>

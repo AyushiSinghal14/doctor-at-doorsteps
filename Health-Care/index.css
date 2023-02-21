@@ -1,0 +1,28 @@
+.outer-box {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+ 
+  background: rgb(73,162,234);
+background: linear-gradient(90deg, rgba(73,162,234,1) 0%, rgba(69,181,237,1) 12%, rgba(72,233,243,1) 37%, rgba(118,196,229,1) 68%, rgba(101,214,244,1) 100%);
+
+}
+.inner-box {
+  padding: 40px;
+  margin: 50px;
+}
+
+.text-size {
+  font-size: x-large;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  color: black;
+}
+
+.options {
+  color: black;
+}
